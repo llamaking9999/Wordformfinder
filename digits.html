@@ -1,0 +1,136 @@
+<script>
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+  }
+
+let state = {};
+    
+    function genarate(){
+
+    state.A=document.getElementById("A").value;
+    state.B=document.getElementById("B").value;
+    state.C=document.getElementById("C").value;
+    state.D=document.getElementById("D").value;
+    state.E=document.getElementById("E").value;
+    state.F=document.getElementById("F").value;
+    state.G=document.getElementById("G").value;
+    state.H=document.getElementById("H").value;
+    state.I=document.getElementById("I").value;
+
+    state.hundreds=['',' one hundred',' two hundred',' three hundred',' four hundred',' five hundred',' six hundred',' seven hundred',' eight hundred',' nine hundred']
+
+    state.tens=[' ',' ',' twenty',' thirty',' forty',' fifty',' sixty',' seventy',' eighty',' ninety']
+
+    state.ones=['',' one',' two',' three',' four',' five',' six',' seven',' eight',' nine']
+
+    state.hundreds2=['',' one hundred',' two hundred',' three hundred',' four hundred',' five hundred',' six hundred',' seven hundred',' eight hundred',' nine hundred']
+
+    state.tens2=[' ',' ',' twenty',' thirty',' forty',' fifty',' sixty',' seventy',' eighty',' ninety']
+
+    state.ones2=['',' one',' two',' three',' four',' five',' six',' seven',' eight',' nine']
+
+    state.hundreds3=['',' one hundred',' two hundred',' three hundred',' four hundred',' five hundred',' six hundred',' seven hundred',' eight hundred',' nine hundred']
+
+    state.tens3=[' ',' ',' twenty',' thirty',' forty',' fifty',' sixty',' seventy',' eighty',' ninety']
+
+    state.ones3=['',' one',' two',' three',' four',' five',' six',' seven',' eight',' nine']
+
+    if (state.C != 0){
+        state.tens=[' ','',' twenty-',' thirty-',' forty-',' fifty-',' sixty-',' seventy-',' eighty-',' ninety-']
+
+    }
+        if (state.C == 0){
+
+        state.ones=['',' one',' two',' three',' four',' five',' six',' seven',' eight',' nine']
+        }
+        else{
+            state.ones=['','one','two','three','four','five','six','seven','eight','nine']
+            if (state.B==1)
+            {
+                state.ones=['',' one',' two',' three',' four',' five',' six',' seven',' eight',' nine']
+            }
+        }
+    
+    
+    if (state.B == 1){
+        state.ones=['ten',' eleven',' twelve',' thirteen',' fourteen',' fifteen',' sixteen',' seventeen',' eighteen',' nineteen']
+        state.tens=['',' ','','','','','','','','']
+    }
+
+    if (state.F != 0){
+        state.tens2=[' ','',' twenty-',' thirty-',' forty-',' fifty-',' sixty-',' seventy-',' eighty-',' ninety-']
+
+    }
+        if (state.F == 0){
+
+        state.ones2=['',' one',' two',' three',' four',' five',' six',' seven',' eight',' nine']
+        }
+        else{
+            state.ones2=['','one','two','three','four','five','six','seven','eight','nine']
+            if (state.E==1)
+            {
+                state.ones2=['',' one',' two',' three',' four',' five',' six',' seven',' eight',' nine']
+            }
+        }
+    
+    
+    if (state.E == 1){
+        state.ones3=['ten',' eleven',' twelve',' thirteen',' fourteen',' fifteen',' sixteen',' seventeen',' eighteen',' nineteen']
+        state.tens3=['',' ','','','','','','','','']
+    }
+
+    if (state.I != 0){
+        state.tens3=[' ','',' twenty-',' thirty-',' forty-',' fifty-',' sixty-',' seventy-',' eighty-',' ninety-']
+
+    }
+        if (state.I == 0){
+
+        state.ones3=['',' one',' two',' three',' four',' five',' six',' seven',' eight',' nine']
+        }
+        else{
+            state.ones3=['','one','two','three','four','five','six','seven','eight','nine']
+            if (state.H==1)
+            {
+                state.ones3=['',' one',' two',' three',' four',' five',' six',' seven',' eight',' nine']
+            }
+        }
+    
+    
+    if (state.H == 1){
+        state.ones3=['ten',' eleven',' twelve',' thirteen',' fourteen',' fifteen',' sixteen',' seventeen',' eighteen',' nineteen']
+        state.tens3=['',' ','','','','','','','','']
+    }
+
+
+    state.number=((state.hundreds[state.A]).concat(state.tens[state.B])).concat(state.ones[state.C])
+
+    state.number2=((state.hundreds2[state.D]).concat(state.tens2[state.E])).concat(state.ones2[state.F])
+    state.numbery2 = state.D + state.E + state.F
+
+    state.number3=((state.hundreds3[state.G]).concat(state.tens3[state.H])).concat(state.ones3[state.I])
+    state.numbery3 = state.G + state.H + state.I
+
+    if (state.numbery2 > 0){
+     state.number2 = state.number2.concat(' thousand ')
+     state.number = state.number2.concat(state.number)
+    }
+    if (state.numbery3 > 0){
+     state.number3 = state.number3.concat(' million ')
+     state.number = state.number3.concat(state.number)
+    }
+    
+
+    console.log(state.number)
+    
+    document.getElementById("Number").innerText=(state.number)
+    
+}
+
+</script>
+
+<button onclick="genarate()">genarate</button>
+<hr>
+<input type="number" id="G" value=0 style="width: 25px;">&nbsp;<input type="number" id="H" value=0 style="width: 25px;">&nbsp;<input type="number" id="I" value=0 value=0 style="width: 25px;">,<input type="number" id="D" value=0 style="width: 25px;">&nbsp;<input type="number" id="E" value=0 style="width: 25px;">&nbsp;<input type="number" id="F" value=0 value=0 style="width: 25px;">,<input type="number" id="A" value=0 style="width: 25px;">&nbsp;<input type="number" id="B" value=0 style="width: 25px;">&nbsp;<input type="number" id="C" value=0 style="width: 25px;">
+<hr>
+<span id="Number"></span> 
